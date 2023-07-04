@@ -1,0 +1,145 @@
+/* 팝업창이라네요 */
+#contact_ {
+    font-size: 30px;
+    /* font-family: ; */
+    font-style: normal;
+    color: #252526;
+    margin: auto;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    margin-top: 200px;
+    pointer-events: none;
+}
+#contact_::before{
+    content: "";
+    width: 170px;
+    height: 104px;
+    background: url(../img/callme.png) no-repeat center/contain;
+    display: block;
+    margin: auto;
+    pointer-events: auto;
+}
+#contact span {
+    pointer-events: auto;
+}
+.popup {
+    width: 1010px;
+    height: 700px;
+    position: fixed;
+    z-index: 200;
+    background: #fff;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 100px 90px;
+    border-radius: 35px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+/* ↓ 나중에 다시 하기 */
+.tied .popup>div {
+    /* min-width:530px;
+    border: none; */
+}
+.move{
+    transition: ease all .5s;
+}
+.move.up {
+    opacity: 1;
+    transform: translateY(0.5px);
+}
+.popup>div{
+    position: relative;
+}
+.popup div p:first-child {
+    font-family: '';
+    font-weight: bolder;
+    line-height: 60px;
+    font-size: 40px;
+}
+.popup div span{
+    width: 80px;
+    height: 700px;
+    border-radius: 35px 0px 0px 35px;
+    position: absolute;
+    top: -100px; 
+    left: -110px;
+    text-indent: -9999px;
+    background-color: skyblue;
+}
+.popup p+p{
+    margin-top: 30px;
+}
+
+
+/* form */
+form{
+    display: block;
+}
+/* fieldset */
+fieldset {
+    min-width: 530px;
+    border: none;
+}
+.scr_out {
+    display: none;
+}
+.form_base {
+    border: 2px solid steelblue;
+    border-radius: 6px;
+    background: #fafafa;
+    height: 46px;
+    width: 100%;
+    line-height: 100%;
+    display: block;
+    font-size: 16px;
+    margin-bottom: 15px;
+    /* font-family: ; */
+    font-weight: 600;
+    outline: none;
+}
+.form_base.alert {
+    /* border-color: #ef7f7f; */
+}
+.fa.fa-check{
+    position: absolute;
+    right: 100px;
+    color: green;
+    margin-top: -50px;
+    display: none;
+}
+.fa {
+    font-size: 22px;
+    cursor: pointer;
+    margin-right: 0px;
+    /* -webkit-font-smoothing : antialiased; */
+}
+.fa-check {
+    position: absolute;
+    right: 100px;
+    color: greenyellow;
+    margin-top: -50px;
+}
+.fa-check:before{
+    content: "\f00c";
+}
+textarea.form_base{
+    padding-top: 15px;
+    min-height: 180px;
+}
+textarea+span{
+    display: none;
+}
+button.form_base {
+    width: 100px;
+    height: 100px;
+    border: 15px solid steelblue;
+    border-radius: 50%;
+    color: #000;
+    text-transform: none;
+    cursor: pointer;
+    margin: 50px 0 20px 430px;
+    padding-left: 0px;
+}

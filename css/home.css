@@ -1,0 +1,572 @@
+@charset "utf-8";
+
+/* 공통이에여 */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+}
+ul {
+    list-style: none;
+}
+
+
+/* // nav */
+.nav {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+}
+.nav .logo{
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    margin-top: 30px;
+    left: 50%;
+    right: 50%;
+    z-index: 10;
+    transform: translate(-60%,-20%);
+}
+.nav .logo img {
+    width: 70px;
+    height: auto;
+    cursor: pointer;
+    transform: translateX(50%);
+}
+.nav .hamburger {
+    line-height: 60px;
+    width: 60px;
+    height: 100%;
+    text-align: center;
+    visibility: hidden;
+}
+.nav .hamburger a {
+    position: fixed;
+    display: inline-block;
+    font-size: 16px;
+    z-index: 11;
+    transition: 0.5s;
+    color: #d7e6e8;
+    letter-spacing: -3px;
+    -webkit-text-stroke: 1.5px #000;
+}
+
+/* --side-- */
+.side {
+    position: fixed;
+    width: 270px;
+    height: 100%;
+    border-radius: 0 0 20px 20px;
+    background-color: rgba(32, 32, 32, 0.071);
+    transition: 0.5s;
+    left: -300px;
+    z-index: 10;
+}
+.side ul{
+    width: 100%;
+    height: 30px;
+    padding-top: 50px;
+}
+.side ul li {
+    width: 100%;
+    text-align: center;
+    height: 30px;
+}
+.side ul li a {
+    font-size: 0;
+    display: inline-block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+}
+
+/* before 가상요소 */
+.side ul li:nth-child(1) a::before {
+    content: "Welcome";
+}
+.side ul li a::before {
+    font-size: 10px;
+    color: #fff;
+}
+.side ul li:nth-child(2) a::before{
+    content: "About Me";
+}
+.side ul li:nth-child(3) a::before{
+    content: "Portfolio";
+}
+.side ul li:nth-child(4) a::before{
+    content: "Publishing";
+}
+.side ul li:nth-child(5) a::before{
+    content: "Design";
+}
+
+/* home라고 쓰고 main이라고 읽는다 */
+video {
+    width: 100%;
+}
+.text_box{
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+    /* margin: 0 auto; */
+}
+.text_box .text {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* 인디케이터 */
+.indicator {
+    position: fixed;
+    left: 40px;
+    top: 50%;
+    /* transform: translateX(-30%);
+    transform: translateY(-50%); */
+    transform: translate(-50%, -40%);
+    z-index: 11;
+
+}
+.indicator ul li {
+    margin: 20px 0;
+    font-size: 18px;
+}
+.indicator ul li a{
+    color:#000;
+    font-size: 14px;
+    font-weight: bold;
+}
+.indicator ul li.on a {
+    font-weight: bold;
+    color: tomato;
+}
+
+/* 프로필입니다요 */
+.about {
+    width: 100%;
+    height: 969px;
+    max-width: 100%;
+    overflow: hidden;
+}
+.about h1 {
+    font-size: 50px;
+    padding: 30px 0;
+    text-align: center;
+}
+.about .about-wrap {
+  display: flex;
+  /* opacity: 0; */
+  position: absolute;
+  width: 1200px;
+  left: 50%;
+  top: 50%;
+  bottom: 5%;
+  transform: translate(-640px, 600px);
+  margin: 0 auto;
+
+}
+.about .left {
+ display: flex;
+ flex-flow: column nowrap;
+ margin-right: 28px;
+}
+.about .left .about_img {
+    margin-top: 100px;
+    width: 200px;
+}
+.about .left .about_img p {
+    width: 250px;
+}
+.about .left .about_img p img {
+    width: 100%;
+}
+
+/* 프로필 right */
+.about .right {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-around;
+
+}
+.about .right .profile {
+    width: 60%;
+}
+.about .right .profile > h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.about .right .profile > dd {
+    display: flex;
+    flex-flow: column nowrap;
+}
+.about .right .profile > dd dl {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 20px;
+}
+.about .right .profile > dd dl dt {
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.about .right .profile > dd dl dd {
+    margin-left: 10px;
+}
+.about .right .profile > dd .txt {
+    display: flex;
+    flex-flow: column wrap;
+}
+.about .right .profile > dd .txt dd {
+    margin-left: 5px;
+    line-height: 1.4;
+}
+
+/* about title */
+.about .right .about_title {
+    width: 55%;
+}
+.about .right .about_title {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 700;
+
+}
+.New {
+    animation: cursor 0.5s ease infinite;
+}
+@keyframes cursor {
+    50% {border-color: transparent;}
+}
+
+
+/* certificate */
+.certificate-wrap {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    /* width: 600px; */
+    /* text-align: center; */
+    transform: translate(200px, -150px);
+}
+.about .right .certificate-wrap > h2 {
+    margin-bottom: 20px;
+}
+.about .right .certificate ul {
+    display: flex;
+    flex-flow: row wrap;
+}
+.about .right .certificate li {
+    width: 40%;
+    line-height: 3;
+}
+
+/* Tools */
+.Tools-wrap {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    /* text-align: center; */
+    transform: translate(200px, 130px);
+}
+.about .right .Tools-wrap > h2 {
+    margin-bottom: 20px;
+}
+.about .right .Tools {
+    display: flex;
+    flex-flow: row wrap;
+}
+.about .right .Tools p{
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 20%;
+}
+.about .right .Tools p img {
+    width: 50px;
+}
+
+
+
+/* 포트폴리오 */
+.work {
+    width: 100%;
+    height: 969px;
+    background-color: #f6f6f6eb;
+    overflow: hidden;
+}
+.work .work-wrap {
+    width: 1240px;
+    height: 100%;
+    margin: 0 auto;
+}
+.work h1 {
+    position: relative;
+    font-size: 50px;
+    text-align: center;
+    padding: 30px 0;
+}
+
+/* 아이맥 */
+.imac {
+    width: 50%;
+    height: auto;
+    margin-left: 60px;
+    float: left;
+    position: relative;
+    top: 15%;
+}
+.imac::before {
+    content: "Hover↓";
+    display: inline-block;
+    animation: hover 1.5s infinite linear;
+    margin-left: 90%;
+    margin-bottom: 10px;
+    color: rgb(115, 115, 115);
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 3px;
+    font-size: 14px;
+    /* box-shadow: 1px 2px 6px 1px rgb(246, 241, 148); */
+}
+.imac .screen {
+    background: #000;
+    border-radius: 3% 3% 0 0 / 5% 5% 0 0;
+    position: relative;
+    width: 100%;
+}
+.imac .screen::before {
+    content: "";
+    display: block;
+    padding-top: 60%;
+}
+.imac .viewport{
+    transition: background-position 6s ease;
+    background-position: 0 0;
+    background-size: 100% auto;
+    overflow: hidden;
+    cursor: pointer;
+}
+.viewport {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 4%;
+    background: #333;
+}
+.imac .viewport::after {
+    content: "";
+    background: radial-gradient(circle at right bottom, transparent 75%, rgba(255, 255, 255, 0.05) 75%, transparent);
+}
+.imac .line {
+    background: linear-gradient(90deg, #A6A6AA, #E1E2E4);
+    border-radius: 0 0 3% 3% / 0 0 33.33% 33.33%;
+    position: relative;
+    width: 100%;
+}
+.imac .line::before {
+    content: "";
+    display: block;
+    padding-top: 9%;
+}
+.leg {
+    margin: 0 auto;
+    position: relative;
+    width: 20%;
+}
+.leg::before{
+    content: "";
+    display: block;
+    padding-top: 46%;
+    background: linear-gradient(#7a7b80, #abacaf 26%, #d0d1d2 57%, #f2f2f2 76%, #e4e4e4 84%, #787878);
+}
+.foot{
+    position: relative;
+    width: 20%;
+    margin: 0 auto;
+    perspective: 180px;
+}
+.foot::before {
+    content: "";
+    display: block;
+    padding-top: 40%;
+    transform: rotateX(65deg);
+    transform-origin: center top;
+    background: linear-gradient(#7b7b7b, #7f7f7f 39%, #a6a6a6 53%, #ccc 67%, #aaa 86%, #eee 88%, #fff 95%, #a9a9a9 95%, #000);
+    border-radius: 0 0 10% 10% / 0 0 30% 30%;
+    box-shadow: 0 -10px 5px rgba(255, 255, 255, 0.1) inset, 0 -17px 6px rgba(0, 0, 0, 0.1) inset;
+}
+
+
+/* 퍼블리싱 */
+.container {
+    position: relative;
+    display: flex;
+    height: 969px;
+    flex-direction: column;
+    background: white;
+
+}
+.container h1{
+    padding-top: 30px;
+    font-size: 50px;
+    text-align: center;
+    color: #000;
+}
+.container .list_ {
+    margin-top: 50px;
+    margin: 0 auto;
+}
+.container .list_ a{
+    display: inline-block;
+    width: 200px;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+}
+.container .list_ .project_title_active {
+    background-color: #fff;
+    color: #DA0037;
+    box-shadow: none;
+    font-weight: 700;
+}
+.container__ {
+    background-color: #eee;
+    padding: 50px;
+    height: 380px;
+    border-radius: 0 10px 10px 10px;
+    /* margin: 0 auto; */
+}
+.imagge-container {
+    width: 80%;
+    height: 80%;
+    overflow: hidden;
+}
+.ms__image {
+    background-image: url("../img/bing.png");
+}
+
+
+/* .Contact */
+.contact {
+    width: 100%;
+    height: 969px;
+    background-color: aliceblue;
+    overflow: hidden;
+}
+.contact .contact-wrap {
+    width: 1240px;
+    height: 100%;
+    margin: 0 auto;
+}
+.contact h1 {
+    text-align: center;
+    padding: 60px 0;
+    font-size: 80px;
+    color: transparent;
+    -webkit-text-stroke: 1.5px #333;
+}
+@keyframes mail {
+    from {transform: translateX(-150%)}
+    to{transform: translateX(150%)}
+}
+.contact .circle {
+    /* 동글동글 움직이는 원 */
+    position: relative;
+    z-index: 1;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #000;
+    margin-top: 100px;
+    animation: mail 3s alternate infinite;
+}
+.contact .mail a{
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    display: block;
+    mix-blend-mode: difference;
+    position: relative;
+    top: -60px;
+    z-index: 2;
+    color: #fff;
+}
+.contact p {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.contact .code {
+    /* width: 240px; */
+    height: 130px;
+    margin: 80px auto;
+    transform: translate(430px);
+}
+.contact .code .kakao-code img {
+    width: 110px;
+    height: 110px;
+    border-radius: 30%;
+    float: left;
+}
+.contact .code .kakao-code {
+    float: left;
+    margin-right: 20px;
+    /* transform: translate(350px, 80px); */
+}
+.contact .code .insta-code img {
+    width: 119px;
+    height: 110px;
+    border-radius: 30%;
+    float: left;
+}
+.contact .code .insta-code {
+    float: left;
+    margin-right: 20px;
+    /* transform: translate(350px, 80px); */
+}
+.contact .code .mail-code img {
+    width: 119px;
+    height: 110px;
+    border-radius: 30%;
+    float: left;
+}
+.contact .code .mail-code {
+    float: left;
+    margin-right: 20px;
+    /* transform: translate(350px, 80px); */
+}
+.contact .copy {
+    clear: both;
+    padding-top: 100px;
+}
+.contact .copy span{
+    display: block;
+    text-align: center;
+    font-size: 12px;
+}
+
+
+
+
+
+
